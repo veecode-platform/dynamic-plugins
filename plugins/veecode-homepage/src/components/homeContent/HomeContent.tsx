@@ -7,33 +7,35 @@ import {
 import Grid from '@mui/material/Grid';
 import { SearchContextProvider } from '@backstage/plugin-search-react';
 import { Content } from '@backstage/core-components';
-import VeeCodeLogo from '../../assets/veecode-logo.svg';
 import BackstageLogo from '../../assets/backstage.png';
-import Icon from './Icon';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Communitylogo from '../../assets/Community';
+import DocsLogo from '../../assets/Docs';
+import WebsiteLogo from '../../assets/Website';
+import SupportLogo from '../../assets/Support';
 
 export const HomeContent = () => {
   const tools = [
     {
       url: 'https://docs.platform.vee.codes/',
       label: 'Docs',
-      icon: <Icon src={VeeCodeLogo} />,
+      icon: <DocsLogo />,
     },
     {
       url: 'https://github.com/orgs/veecode-platform/discussions',
       label: 'Community',
-      icon: <Icon src={VeeCodeLogo} />,
+      icon: <Communitylogo />,
     },
     {
       url: 'https://platform.vee.codes/',
       label: 'Website',
-      icon: <Icon src={VeeCodeLogo} />,
+      icon: <WebsiteLogo />,
     },
     {
       url: 'https://veecode-suporte.freshdesk.com/support/login',
       label: 'Support',
-      icon: <Icon src={VeeCodeLogo} />,
+      icon: <SupportLogo />,
     },
   ];
 
