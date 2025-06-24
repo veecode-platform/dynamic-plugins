@@ -18,17 +18,22 @@ import { useUserProfile } from '@backstage/plugin-user-settings';
 import Avatar from '@mui/material/Avatar';
 import Skeleton from '@mui/material/Skeleton';
 
-export const UserAvatar = () => {
+interface UserAvatarProps {
+  width?: string;
+  height?: string;
+}
+
+export const UserAvatar: React.FC<UserAvatarProps> = ({ width, height }) => {
   const { profile, loading: profileLoading } = useUserProfile();
 
   return (
     <>
       {profileLoading ? (
-        <Skeleton variant="circular" sx={{ width: '42px', height: '42px' }} />
+        <Skeleton variant="circular" sx={{ width, height }} />
       ) : (
         <Avatar
           src={profile.picture ?? '/avatar.png'}
-          sx={{ height: '42px', width: '42px', objectFit: 'cover' }}
+          sx={{ width, height, objectFit: 'cover' }}
           alt="Profile picture"
         />
       )}

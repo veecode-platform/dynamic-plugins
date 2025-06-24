@@ -1,0 +1,10 @@
+# please keep this in sync with packages/app/src/App.tsx
+dynamicPlugins:
+  frontend:
+    veecode-platform.plugin-veecode-homepage:
+      dynamicRoutes:
+        - path: /
+          importName: VeecodeHomepagePage
+          menuItem:
+            icon: home
+            text: Home

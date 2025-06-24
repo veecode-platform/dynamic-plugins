@@ -1,5 +1,5 @@
 {
-  "name": "@internal/plugin-veecode-homepage",
+  "name": "@veecode-platform/plugin-veecode-homepage",
   "version": "0.1.0",
   "license": "Apache-2.0",
   "private": true,
@@ -21,7 +21,9 @@
     "test": "backstage-cli package test",
     "clean": "backstage-cli package clean",
     "prepack": "backstage-cli package prepack",
-    "postpack": "backstage-cli package postpack"
+    "postpack": "backstage-cli package postpack",
+    "tsc": "tsc",
+    "build-dynamic-plugin": "yarn tsc && npx @janus-idp/cli@latest package export-dynamic-plugin --embed-package @backstage/plugin-home"
   },
   "dependencies": {
     "@backstage/catalog-model": "^1.7.4",
@@ -41,6 +43,7 @@
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@mui/icons-material": "^7.1.2",
     "@mui/material": "^7.1.2",
+    "@scalprum/react-core": "0.9.5",
     "lodash": "^4.17.21",
     "react-use": "^17.2.4"
   },

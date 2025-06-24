@@ -21,7 +21,9 @@
     "test": "backstage-cli package test",
     "clean": "backstage-cli package clean",
     "prepack": "backstage-cli package prepack",
-    "postpack": "backstage-cli package postpack"
+    "postpack": "backstage-cli package postpack",
+    "tsc": "tsc",
+    "build-dynamic-plugin": "yarn tsc && npx @janus-idp/cli@latest package export-dynamic-plugin --embed-package @backstage/plugin-home"
   },
   "dependencies": {
     "@backstage/catalog-model": "^1.7.4",
@@ -40,6 +42,7 @@
     "@mui/material": "^7.1.2",
     "@red-hat-developer-hub/backstage-plugin-theme": "^0.9.0",
     "@scalprum/react-core": "^0.9.5",
+    "lodash": "^4.17.21",
     "react-use": "^17.2.4"
   },
   "peerDependencies": {
@@ -55,6 +58,7 @@
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
+    "@types/lodash": "^4",
     "msw": "^1.0.0",
     "react": "^16.13.1 || ^17.0.0 || ^18.0.0"
   },
@@ -62,5 +66,6 @@
     "dist",
     "config.d.ts",
     "app-config.dynamic.yaml"
-  ]
+  ],
+  "configSchema": "config.d.ts"
 }

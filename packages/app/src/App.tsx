@@ -37,7 +37,7 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 // import { VeecodeGlobalHeader } from '@internal/plugin-veecode-global-header';
-import { VeecodeHomepagePage } from '@internal/plugin-veecode-homepage';
+import { VeecodeHomepagePage } from '@veecode-platform/plugin-veecode-homepage';
 import { NotificationsPage } from '@backstage/plugin-notifications';
 import { SignalsDisplay } from '@backstage/plugin-signals';
 import { VisitListener } from '@backstage/plugin-home';

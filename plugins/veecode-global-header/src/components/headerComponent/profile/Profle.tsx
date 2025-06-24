@@ -13,7 +13,7 @@ export const Profile: React.FC<ProfileProps> = ({ handleOpenMenu }) => {
       handleClick={handleOpenMenu}
       color="inherit"
     >
-      <UserAvatar />
+      <UserAvatar width="42px" height="42px" />
     </IconButtonComponent>
   );
 };
