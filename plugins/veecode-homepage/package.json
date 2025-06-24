@@ -23,7 +23,7 @@
     "prepack": "backstage-cli package prepack",
     "postpack": "backstage-cli package postpack",
     "tsc": "tsc",
-    "build-dynamic-plugin": "yarn tsc && npx @janus-idp/cli@latest package export-dynamic-plugin --embed-package @backstage/plugin-home"
+    "build-dynamic-plugin": "yarn tsc && npx @janus-idp/cli@latest package export-dynamic-plugin --shared-package '!/@backstage/plugin-notifications/' --shared-package @backstage/plugin-home --embed-package @backstage/plugin-notifications-backend --embed-package @backstage/plugin-signals-react"
   },
   "dependencies": {
     "@backstage/catalog-model": "^1.7.4",

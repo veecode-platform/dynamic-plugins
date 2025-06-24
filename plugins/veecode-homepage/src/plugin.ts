@@ -13,6 +13,7 @@ import {
   visitsApiRef,
   VisitsStorageApi,
 } from '@backstage/plugin-home';
+import { VeeCodeHomePage } from './components/VeeCodeHomePage';
 
 import { rootRouteRef } from './routes';
 
@@ -36,7 +37,7 @@ export const veecodeHomepagePlugin = createPlugin({
 
 export const VeecodeHomepagePage = veecodeHomepagePlugin.provide(
   createRoutableExtension({
-    name: 'VeecodeHomepagePage',
+    name: 'c',
     component: () =>
       import('./components/VeeCodeHomePage').then(m => m.VeeCodeHomePage),
     mountPoint: rootRouteRef,
