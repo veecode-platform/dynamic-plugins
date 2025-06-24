@@ -1,5 +1,5 @@
 {
-  "name": "@internal/plugin-veecode-global-header",
+  "name": "@veecode-platform/plugin-veecode-global-header",
   "version": "0.1.0",
   "license": "Apache-2.0",
   "private": true,

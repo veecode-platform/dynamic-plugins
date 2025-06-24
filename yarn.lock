@@ -8714,9 +8714,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@internal/plugin-veecode-global-header@workspace:^, @internal/plugin-veecode-global-header@workspace:plugins/veecode-global-header":
+"@veecode-platform/plugin-veecode-global-header@workspace:^, @veecode-platform/plugin-veecode-global-header@workspace:plugins/veecode-global-header":
   version: 0.0.0-use.local
-  resolution: "@internal/plugin-veecode-global-header@workspace:plugins/veecode-global-header"
+  resolution: "@veecode-platform/plugin-veecode-global-header@workspace:plugins/veecode-global-header"
   dependencies:
     "@backstage/catalog-model": "npm:^1.7.4"
     "@backstage/cli": "npm:^0.32.1"
@@ -18100,7 +18100,7 @@ __metadata:
     "@backstage/plugin-user-settings": "npm:^0.8.22"
     "@backstage/test-utils": "npm:^1.7.8"
     "@backstage/theme": "npm:^0.6.6"
-    "@internal/plugin-veecode-global-header": "workspace:^"
+    "@veecode-platform/plugin-veecode-global-header": "workspace:^"
     "@material-ui/core": "npm:^4.12.2"
     "@material-ui/icons": "npm:^4.9.1"
     "@playwright/test": "npm:^1.32.3"
