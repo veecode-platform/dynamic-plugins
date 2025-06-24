@@ -12,18 +12,19 @@ const Communitylogo = () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 502.648 502.648"
       xmlSpace="preserve"
+      style={{ cursor: 'pointer ' }}
     >
       <g>
         <g>
           <g>
             <circle
-              style={{ fill: theme.palette.text.primary }}
+              style={{ fill: theme.palette.grey[600] }}
               cx="250.399"
               cy="91.549"
               r="58.694"
             />
             <path
-              style={{ fill: theme.palette.text.primary }}
+              style={{ fill: theme.palette.grey[600] }}
               d="M455.861,253.028l-54.703-11.411c-18.637-3.904-37.037,4.638-46.765,19.824
 				c-9.448-4.853-19.608-9.038-30.415-12.511v-32.529c0.022-24.612-20.126-44.738-44.651-44.738h-55.933
 				c-24.655,0-44.716,20.126-44.716,44.738v32.701c-10.699,3.408-20.751,7.593-30.264,12.468
@@ -38,13 +39,13 @@ const Communitylogo = () => {
 				C357.52,427.191,308.101,447.381,251.305,447.381z"
             />
             <circle
-              style={{ fill: theme.palette.text.primary }}
+              style={{ fill: theme.palette.grey[600] }}
               cx="443.954"
               cy="168.708"
               r="58.694"
             />
             <path
-              style={{ fill: theme.palette.text.primary }}
+              style={{ fill: theme.palette.grey[600] }}
               d="M70.736,226.172c31.752-6.644,52.029-37.77,45.471-69.501
 				c-6.687-31.709-37.749-52.072-69.523-45.428c-31.709,6.622-52.072,37.727-45.428,69.458
 				C7.879,212.453,38.984,232.795,70.736,226.172z"

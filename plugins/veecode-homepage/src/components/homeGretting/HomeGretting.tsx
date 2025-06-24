@@ -4,8 +4,13 @@ import { UserAvatar } from '../userAvatar/UserAvatar';
 import Typography from '@mui/material/Typography';
 import WavesImg from '../../assets/waves.svg';
 import { useApi, configApiRef } from '@backstage/core-plugin-api';
+import { useUserProfile } from '@backstage/plugin-user-settings';
+import Skeleton from '@mui/material/Skeleton';
+import { useEffect, useState } from 'react';
 
 export const HomeGreeting = () => {
+  const [loading, setLoading] = useState<boolean>(false);
+  const { displayName } = useUserProfile();
   const theme = useTheme();
   const isDarkMode = theme.palette.mode === 'dark';
   const configApi = useApi(configApiRef);
@@ -17,6 +22,23 @@ export const HomeGreeting = () => {
     (isDarkMode
       ? configApi.app?.branding?.theme?.dark?.headerColor2
       : configApi.app?.branding?.theme?.light?.headerColor2) ?? '#86F4CE';
+
+  const profileDisplayName = () => {
+    const name = displayName;
+    const regex = /^[^:/]+:[^/]+\/[^/]+$/;
+    if (regex.test(name)) {
+      return name
+        .charAt(name.indexOf('/') + 1)
+        .toLocaleUpperCase('en-US')
+        .concat(name.substring(name.indexOf('/') + 2));
+    }
+    return name;
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 1000);
+  }, []);
 
   return (
     <Box
@@ -43,8 +65,20 @@ export const HomeGreeting = () => {
         <Box>
           <UserAvatar width="120px" height="120px" />
         </Box>
-        <Box>
-          <Typography variant="h3">Bem Vindo de volta, Valber</Typography>
+        <Box color={theme.palette.grey[100]}>
+          <Typography variant="h3">
+            Welcome back
+            {loading ? (
+              <Skeleton
+                variant="rectangular"
+                width={130}
+                height={60}
+                style={{ display: 'inline' }}
+              />
+            ) : (
+              <>, {profileDisplayName()} 👋</>
+            )}{' '}
+          </Typography>
           <Typography variant="h6">Let's get started.</Typography>
         </Box>
       </Box>

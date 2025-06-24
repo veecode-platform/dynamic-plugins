@@ -5,7 +5,7 @@ import Menu from '@mui/material/Menu';
 import Box from '@mui/material/Box';
 import { useUserProfile } from '@backstage/plugin-user-settings';
 import Typography from '@mui/material/Typography';
-import { Divider, ListItemIcon, MenuItem } from '@material-ui/core';
+import { Divider, ListItemIcon, MenuItem, Paper } from '@material-ui/core';
 import { UserAvatar } from '../../userAvatar/UserAvatar';
 import { useApi } from '@backstage/core-plugin-api';
 import { catalogApiRef } from '@backstage/plugin-catalog-react';
@@ -13,6 +13,8 @@ import { configApiRef } from '@backstage/core-plugin-api';
 import { UserEntity } from '@backstage/catalog-model';
 import { Link } from 'react-router-dom';
 import { Logout } from '../logout/Logout';
+import Chip from '@mui/material/Chip';
+import { useTheme } from '@mui/material/styles';
 
 interface MenuItemsProps {
   anchorEl: HTMLElement | null;
@@ -27,7 +29,8 @@ export const MenuItems: React.FC<MenuItemsProps> = ({
   isOpen,
   handleClose,
 }) => {
-  const { displayName, backstageIdentity, profile } = useUserProfile();
+  const theme = useTheme();
+  const { displayName, backstageIdentity } = useUserProfile();
   const catalogApi = useApi(catalogApiRef);
   const config = useApi(configApiRef);
   const supportUrl =
@@ -73,32 +76,38 @@ export const MenuItems: React.FC<MenuItemsProps> = ({
       keepMounted
       open={isOpen}
       onClose={handleClose}
-      PaperProps={{
-        sx: {
-          width: 250,
-          borderRadius: 2,
-          mt: 1.25,
-          mr: -0.5,
-          boxShadow: 3,
+      slotProps={{
+        paper: {
+          sx: {
+            width: 250,
+            borderRadius: 2,
+            mt: 0.8,
+            mr: -0.5,
+            boxShadow: 3,
+            background: `${theme.palette.background.default} !important`,
+            border: `1px solid ${theme.palette.grey[600]}`,
+          },
         },
       }}
     >
-      {/* Perfil */}
+      {/* Profile */}
       <Box
         sx={{ px: 2, py: 1.5, display: 'flex', alignItems: 'center', gap: 1.5 }}
       >
         <UserAvatar />
         <Box>
           <Typography variant="subtitle1">{profileDisplayName()}</Typography>
-          <Typography variant="body2" color="text.secondary">
-            {profile.email ?? backstageIdentity?.userEntityRef}
-          </Typography>
+          <Chip
+            size="small"
+            variant="outlined"
+            label={backstageIdentity?.ownershipEntityRefs}
+          />
         </Box>
       </Box>
 
       <Divider />
 
-      {/* Itens com ícones */}
+      {/* Items */}
       <MenuItem onClick={handleClose}>
         <Link to={supportUrl}>
           <ListItemIcon>
