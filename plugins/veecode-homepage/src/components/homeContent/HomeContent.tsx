@@ -7,13 +7,14 @@ import {
 import Grid from '@mui/material/Grid';
 import { SearchContextProvider } from '@backstage/plugin-search-react';
 import { Content } from '@backstage/core-components';
-import BackstageLogo from '../../assets/backstage.png';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Communitylogo from '../../assets/Community';
 import DocsLogo from '../../assets/Docs';
 import WebsiteLogo from '../../assets/Website';
 import SupportLogo from '../../assets/Support';
+
+const BackstageLogo = '../../assets/backstage.png';
 
 export const HomeContent = () => {
   const tools = [

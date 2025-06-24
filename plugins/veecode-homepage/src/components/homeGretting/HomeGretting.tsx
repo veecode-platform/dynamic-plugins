@@ -2,11 +2,12 @@ import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import { UserAvatar } from '../userAvatar/UserAvatar';
 import Typography from '@mui/material/Typography';
-import WavesImg from '../../assets/waves.svg';
 import { useApi, configApiRef } from '@backstage/core-plugin-api';
 import { useUserProfile } from '@backstage/plugin-user-settings';
 import Skeleton from '@mui/material/Skeleton';
 import { useEffect, useState } from 'react';
+
+const WavesImg = '../../assets/waves.svg';
 
 export const HomeGreeting = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -16,12 +17,14 @@ export const HomeGreeting = () => {
   const configApi = useApi(configApiRef);
   const color1 =
     (isDarkMode
-      ? configApi.app?.branding?.theme?.dark?.headerColor1
-      : configApi.app?.branding?.theme?.light?.headerColor1) ?? '#45556D';
+      ? configApi.getOptionalString('app.branding.theme.dark.headerColo1')
+      : configApi.getOptionalString('app.branding.theme.light.headerColo1')) ??
+    '#45556D';
   const color2 =
     (isDarkMode
-      ? configApi.app?.branding?.theme?.dark?.headerColor2
-      : configApi.app?.branding?.theme?.light?.headerColor2) ?? '#86F4CE';
+      ? configApi.getOptionalString('app.branding.theme.dark.headerColo2')
+      : configApi.getOptionalString('app.branding.theme.light.headerColo2')) ??
+    '#86F4CE';
 
   const profileDisplayName = () => {
     const name = displayName;

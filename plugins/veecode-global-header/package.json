@@ -32,6 +32,8 @@
     "@backstage/plugin-catalog-react": "^1.19.0",
     "@backstage/plugin-notifications": "^0.5.6",
     "@backstage/plugin-notifications-common": "^0.0.9",
+    "@backstage/plugin-search-common": "^1.2.18",
+    "@backstage/plugin-search-react": "^1.9.1",
     "@backstage/plugin-signals-react": "^0.0.14",
     "@backstage/plugin-user-settings": "^0.8.23",
     "@backstage/theme": "^0.6.6",

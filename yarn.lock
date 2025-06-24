@@ -8728,6 +8728,8 @@ __metadata:
     "@backstage/plugin-catalog-react": "npm:^1.19.0"
     "@backstage/plugin-notifications": "npm:^0.5.6"
     "@backstage/plugin-notifications-common": "npm:^0.0.9"
+    "@backstage/plugin-search-common": "npm:^1.2.18"
+    "@backstage/plugin-search-react": "npm:^1.9.1"
     "@backstage/plugin-signals-react": "npm:^0.0.14"
     "@backstage/plugin-user-settings": "npm:^0.8.23"
     "@backstage/test-utils": "npm:^1.7.8"
