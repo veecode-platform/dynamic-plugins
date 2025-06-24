@@ -1,0 +1,3 @@
+plugins:
+  - package: oci://docker.io/valberjunior/backstage-veecode-extensions:v4.0.0!veecode-platform-backstage-plugin-scaffolder-backend-module-veecode-extensions-wrapper
+    disabled: false

@@ -1,0 +1,10 @@
+# please keep this in sync with /dynamic-plugins.default.yaml
+dynamicPlugins:
+  frontend:
+    veecode-platform.plugin-veecode-global-header:
+      mountPoints:
+        - mountPoint: application/header
+          importName: VeeCodeGlobalHeader
+          config:
+            position: above-sidebar # above-main-content | above-sidebar
+
