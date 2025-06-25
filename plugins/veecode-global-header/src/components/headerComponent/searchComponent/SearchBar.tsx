@@ -25,7 +25,6 @@ import { createSearchLink } from '../../../utils/stringUtils';
 import { useNavigate } from 'react-router-dom';
 import { SearchInput } from './SearchInput';
 import { SearchOption } from './SearchOption';
-import { useTheme } from '@mui/material/styles';
 import { useDebouncedCallback } from '../../../hooks/useDebouncedCallback';
 
 interface SearchBarProps {
@@ -35,7 +34,6 @@ interface SearchBarProps {
 export const SearchBar = (props: SearchBarProps) => {
   const { query, setSearchTerm } = props;
   const navigate = useNavigate();
-  const theme = useTheme();
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const highlightedIndexRef = useRef(highlightedIndex);
   const { setTerm } = useSearch();
@@ -52,7 +50,7 @@ export const SearchBar = (props: SearchBarProps) => {
   return (
     <SearchResultState {...props}>
       {({ loading, error, value }) => {
-        const results = query?.term ? value?.results ?? [] : [];
+        const results = query?.term ? (value?.results ?? []) : [];
         let options: string[] = [];
         if (query?.term && results.length === 0) {
           options = ['No results found'];
@@ -86,13 +84,14 @@ export const SearchBar = (props: SearchBarProps) => {
             }}
             sx={{
               width: '100%',
+              background: '#FFFFFF10',
               '& [class*="MuiAutocomplete-clearIndicator"]': {
                 visibility: query?.term ? 'visible' : 'hidden',
               },
               padding: '.2rem',
               borderRadius: '8px',
               '&:hover': {
-                background: theme.palette.background.default,
+                background: '#FFFFFF25',
               },
             }}
             filterOptions={x => x}
