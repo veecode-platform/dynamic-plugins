@@ -41,7 +41,7 @@ export const HomeContent = () => {
 
   return (
     <SearchContextProvider>
-      <Content>
+      <Content stretch>
         <Grid container spacing={2} justifyContent="center">
           {/* Top & Recently Visited */}
           <Grid item xs={12}>

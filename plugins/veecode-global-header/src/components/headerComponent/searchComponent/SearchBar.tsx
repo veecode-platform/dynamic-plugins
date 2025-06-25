@@ -26,6 +26,7 @@ import { useNavigate } from 'react-router-dom';
 import { SearchInput } from './SearchInput';
 import { SearchOption } from './SearchOption';
 import { useDebouncedCallback } from '../../../hooks/useDebouncedCallback';
+import { useTheme } from '@mui/material/styles';
 
 interface SearchBarProps {
   query: SearchResultProps['query'];
@@ -37,6 +38,7 @@ export const SearchBar = (props: SearchBarProps) => {
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
   const highlightedIndexRef = useRef(highlightedIndex);
   const { setTerm } = useSearch();
+  const theme = useTheme();
 
   const onInputChange = useDebouncedCallback((_, inputValue) => {
     setSearchTerm(inputValue);
@@ -50,7 +52,7 @@ export const SearchBar = (props: SearchBarProps) => {
   return (
     <SearchResultState {...props}>
       {({ loading, error, value }) => {
-        const results = query?.term ? (value?.results ?? []) : [];
+        const results = query?.term ? value?.results ?? [] : [];
         let options: string[] = [];
         if (query?.term && results.length === 0) {
           options = ['No results found'];
@@ -84,14 +86,16 @@ export const SearchBar = (props: SearchBarProps) => {
             }}
             sx={{
               width: '100%',
-              background: '#FFFFFF10',
+              background:
+                theme.palette.mode === 'dark' ? '#FFFFFF10' : '#99a1af',
               '& [class*="MuiAutocomplete-clearIndicator"]': {
                 visibility: query?.term ? 'visible' : 'hidden',
               },
               padding: '.2rem',
               borderRadius: '8px',
               '&:hover': {
-                background: '#FFFFFF25',
+                background:
+                  theme.palette.mode === 'dark' ? '#FFFFFF25' : '#71717C',
               },
             }}
             filterOptions={x => x}
