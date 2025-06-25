@@ -37,10 +37,10 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 // import { VeecodeGlobalHeader } from '@veecode-platform/plugin-veecode-global-header';
-import { VeecodeHomepagePage } from '@veecode-platform/plugin-veecode-homepage';
 import { NotificationsPage } from '@backstage/plugin-notifications';
 import { SignalsDisplay } from '@backstage/plugin-signals';
 import { VisitListener } from '@backstage/plugin-home';
+import { VeecodeHomepagePage } from '@veecode-platform/plugin-veecode-homepage';
 
 const app = createApp({
   apis,
