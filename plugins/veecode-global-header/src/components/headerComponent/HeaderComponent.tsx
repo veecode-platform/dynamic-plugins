@@ -25,7 +25,7 @@ export const HeaderComponent = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="sticky" component="nav" id="global-header">
         <Toolbar>
           <SearchComponent />
           <Box sx={{ flexGrow: 1 }} />
