@@ -1,6 +1,6 @@
 {
   "name": "@veecode-platform/plugin-veecode-homepage",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "license": "Apache-2.0",
   "private": true,
   "main": "src/index.ts",

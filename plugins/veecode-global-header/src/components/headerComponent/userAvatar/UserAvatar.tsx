@@ -17,7 +17,7 @@
 import { useUserProfile } from '@backstage/plugin-user-settings';
 import Avatar from '@mui/material/Avatar';
 import Skeleton from '@mui/material/Skeleton';
-import AvatarImg from '../../assets/avatar.svg';
+import AvatarImg from '../../../assets/avatar.svg';
 
 interface UserAvatarProps {
   width?: string;
