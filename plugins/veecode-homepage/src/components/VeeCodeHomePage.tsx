@@ -5,7 +5,7 @@ import { HomeContent } from './homeContent/HomeContent';
 
 export const VeeCodeHomePage = () => {
   return (
-    <Box component="main">
+    <Box component="main" sx={{ overflow: 'auto', height: '100vh' }}>
       <HeaderComponent />
       <HomeGreeting />
       <HomeContent />

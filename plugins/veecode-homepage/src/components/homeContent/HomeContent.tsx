@@ -13,8 +13,7 @@ import Communitylogo from '../../assets/Community';
 import DocsLogo from '../../assets/Docs';
 import WebsiteLogo from '../../assets/Website';
 import SupportLogo from '../../assets/Support';
-
-const BackstageLogo = '../../assets/backstage.png';
+import BackstageLogo from '../../assets/backstage.png';
 
 export const HomeContent = () => {
   const tools = [
@@ -43,35 +42,33 @@ export const HomeContent = () => {
   return (
     <SearchContextProvider>
       <Content>
-        <Grid container justifyContent="center" spacing={2}>
-          <Grid container size={{ xs: 12 }} justifyContent="center">
-            <Grid container size={{ xs: 12 }}>
-              <Grid size={{ xs: 12, md: 6 }}>
+        <Grid container spacing={2} justifyContent="center">
+          {/* Top & Recently Visited */}
+          <Grid item xs={12}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={6}>
                 <HomePageTopVisited kind="recent" />
               </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
+              <Grid item xs={12} md={6}>
                 <HomePageRecentlyVisited />
               </Grid>
             </Grid>
+          </Grid>
 
-            <Grid container size={{ xs: 12 }}>
-              <Grid size={{ xl: 8, lg: 8, md: 12, xs: 12 }}>
+          {/* Starred & Toolkit */}
+          <Grid item xs={12}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} md={12} lg={8} xl={8}>
                 <HomePageStarredEntities />
               </Grid>
-              <Grid size={{ xl: 4, lg: 4, md: 12, xs: 12 }}>
+              <Grid item xs={12} md={12} lg={4} xl={4}>
                 <HomePageToolkit tools={tools} />
               </Grid>
             </Grid>
           </Grid>
-          <Grid
-            sx={{
-              marginTop: '9rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            size={{ lg: 12 }}
-          >
+
+          {/* Footer */}
+          <Grid item xs={12} sx={{ marginTop: '7rem' }}>
             <Box
               sx={{
                 display: 'flex',
@@ -81,12 +78,8 @@ export const HomeContent = () => {
                 gap: '10px',
               }}
             >
-              {' '}
               <Typography
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                   fontSize: '1.2em',
                   fontWeight: 'bold',
                 }}
@@ -96,10 +89,7 @@ export const HomeContent = () => {
               <img
                 src={BackstageLogo}
                 alt="backstage logo"
-                style={{
-                  width: '7.5em',
-                  height: '1.5em',
-                }}
+                style={{ width: '7.5em', height: '1.5em' }}
               />
             </Box>
           </Grid>

@@ -12,6 +12,11 @@ export const Logout = () => {
       onClick={async () => {
         await identityApi.signOut();
       }}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+      }}
     >
       <ListItemIcon>
         <LogoutIcon fontSize="small" />

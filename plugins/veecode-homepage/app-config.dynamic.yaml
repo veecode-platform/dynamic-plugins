@@ -5,6 +5,3 @@ dynamicPlugins:
       dynamicRoutes:
         - path: /
           importName: VeecodeHomepagePage
-          menuItem:
-            icon: home
-            text: Home

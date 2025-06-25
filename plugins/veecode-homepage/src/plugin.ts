@@ -13,7 +13,6 @@ import {
   visitsApiRef,
   VisitsStorageApi,
 } from '@backstage/plugin-home';
-import { VeeCodeHomePage } from './components/VeeCodeHomePage';
 
 import { rootRouteRef } from './routes';
 

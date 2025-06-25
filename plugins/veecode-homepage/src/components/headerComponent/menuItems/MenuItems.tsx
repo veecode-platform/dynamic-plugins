@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Menu from '@mui/material/Menu';
 import Box from '@mui/material/Box';
 import { useUserProfile } from '@backstage/plugin-user-settings';
 import Typography from '@mui/material/Typography';
-import { Divider, ListItemIcon, MenuItem, Paper } from '@material-ui/core';
+import { Divider, ListItemIcon, MenuItem } from '@material-ui/core';
 import { UserAvatar } from '../../userAvatar/UserAvatar';
 import { useApi } from '@backstage/core-plugin-api';
 import { catalogApiRef } from '@backstage/plugin-catalog-react';
@@ -23,6 +23,36 @@ interface MenuItemsProps {
   handleClose: () => void;
 }
 
+interface MenuItemProps {
+  handleClose: () => void;
+  link: string;
+  children: ReactElement;
+}
+
+const MenuItemComponent: React.FC<MenuItemProps> = ({
+  handleClose,
+  link,
+  children,
+}) => {
+  return (
+    <MenuItem onClick={handleClose}>
+      <Link to={link}>
+        <Box
+          component="div"
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            padding: '.1rem 0',
+          }}
+        >
+          {children}
+        </Box>
+      </Link>
+    </MenuItem>
+  );
+};
+
 export const MenuItems: React.FC<MenuItemsProps> = ({
   anchorEl,
   menuId,
@@ -34,7 +64,8 @@ export const MenuItems: React.FC<MenuItemsProps> = ({
   const catalogApi = useApi(catalogApiRef);
   const config = useApi(configApiRef);
   const supportUrl =
-    config.getOptionalString('app.support.url') ??
+    config.app?.support?.url ??
+    // config.getOptionalString('app.support.url') ??
     'https://github.com/orgs/veecode-platform/discussions';
 
   useEffect(() => {
@@ -100,30 +131,31 @@ export const MenuItems: React.FC<MenuItemsProps> = ({
           <Chip
             size="small"
             variant="outlined"
-            label={backstageIdentity?.ownershipEntityRefs}
+            label={backstageIdentity?.ownershipEntityRefs[0].split('/')[1]}
           />
         </Box>
       </Box>
 
       <Divider />
 
-      {/* Items */}
-      <MenuItem onClick={handleClose}>
-        <Link to={supportUrl}>
+      {/* Support */}
+      <MenuItemComponent handleClose={handleClose} link={supportUrl}>
+        <>
           <ListItemIcon>
             <HelpOutlineIcon fontSize="small" />
           </ListItemIcon>
           Help
-        </Link>
-      </MenuItem>
-      <MenuItem onClick={handleClose}>
-        <Link to="/settings">
+        </>
+      </MenuItemComponent>
+      {/* Settings */}
+      <MenuItemComponent handleClose={handleClose} link="/settings">
+        <>
           <ListItemIcon>
             <SettingsIcon fontSize="small" />
           </ListItemIcon>
           Settings
-        </Link>
-      </MenuItem>
+        </>
+      </MenuItemComponent>
       <Divider />
 
       {/* Logout */}
