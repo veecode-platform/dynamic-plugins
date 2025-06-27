@@ -1,6 +1,6 @@
 {
   "name": "@veecode-platform/plugin-veecode-global-header",
-  "version": "3.1.0",
+  "version": "1.1.1",
   "license": "Apache-2.0",
   "private": true,
   "main": "src/index.ts",
@@ -11,7 +11,8 @@
     "types": "dist/index.d.ts"
   },
   "backstage": {
-    "role": "frontend-plugin"
+    "role": "frontend-plugin",
+    "pluginId": "veecode-global-header"
   },
   "sideEffects": false,
   "scripts": {
@@ -23,7 +24,7 @@
     "prepack": "backstage-cli package prepack",
     "postpack": "backstage-cli package postpack",
     "tsc": "tsc",
-    "build-dynamic-plugin": "yarn tsc && npx @janus-idp/cli@latest package export-dynamic-plugin --embed-package @backstage/plugin-home"
+    "build-dynamic-plugin": "yarn tsc && npx @janus-idp/cli@latest package export-dynamic-plugin"
   },
   "dependencies": {
     "@backstage/catalog-model": "^1.7.4",

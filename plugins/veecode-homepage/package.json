@@ -1,6 +1,6 @@
 {
   "name": "@veecode-platform/plugin-veecode-homepage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "private": true,
   "main": "src/index.ts",
@@ -11,7 +11,11 @@
     "types": "dist/index.d.ts"
   },
   "backstage": {
-    "role": "frontend-plugin"
+    "role": "frontend-plugin",
+    "pluginId": "veecode-homepage",
+    "pluginPackages": [
+      "@backstage/plugin-home"
+    ]
   },
   "sideEffects": false,
   "scripts": {
@@ -23,7 +27,7 @@
     "prepack": "backstage-cli package prepack",
     "postpack": "backstage-cli package postpack",
     "tsc": "tsc",
-    "build-dynamic-plugin": "npx @janus-idp/cli@latest package export-dynamic-plugin --shared-package '!/@backstage/plugin-notifications/' --shared-package @backstage/plugin-home --embed-package @backstage/plugin-notifications-backend --embed-package @backstage/plugin-signals-react"
+    "build-dynamic-plugin": "npx @janus-idp/cli@latest package export-dynamic-plugin"
   },
   "dependencies": {
     "@backstage/catalog-model": "^1.7.4",
