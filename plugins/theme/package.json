@@ -25,7 +25,9 @@
     "test": "backstage-cli package test",
     "clean": "backstage-cli package clean",
     "prepack": "backstage-cli package prepack",
-    "postpack": "backstage-cli package postpack"
+    "postpack": "backstage-cli package postpack",
+    "build-dynamic-plugin": "yarn tsc && npx @janus-idp/cli@latest package export-dynamic-plugin",
+    "export-dynamic:clean": "run export-dynamic --clean"
   },
   "peerDependencies": {
     "@backstage/core-plugin-api": "^1.10.7",
