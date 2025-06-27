@@ -1,0 +1,40 @@
+name: Build & Publish Dynamic Backstage Plugins
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-publish-plugins:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: 📦 Install deps
+        run: yarn install --frozen-lockfile
+
+      - name: 🧪 Check plugins version with Lerna
+        run: |
+          yarn lerna changed --json > changed.json || echo '[]' > changed.json
+        continue-on-error: true
+
+      - name: 🛠️ Build and publish dynamic plugins
+        run: npx ts-node scripts/build-and-publish.ts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 📤 Upload to plugins-output.yaml
+        uses: actions/upload-artifact@v4
+        with:
+          name: plugins-output
+          path: plugins-output.yaml
