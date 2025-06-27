@@ -32,9 +32,7 @@ export const useThemeConfig = (themeName: string): ThemeConfig => {
         mode: themeName.includes('dark') ? 'dark' : 'light',
       };
     }
-    const themeConfig =
-      configApi.getOptional<ThemeConfig>(`app.branding.theme.${themeName}`) ??
-      {};
+    const themeConfig = configApi.app?.branding?.theme as ThemeConfig;
     if (!themeConfig.mode) {
       themeConfig.mode = themeName.includes('dark') ? 'dark' : 'light';
     }

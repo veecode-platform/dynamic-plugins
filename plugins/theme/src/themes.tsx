@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import React, { useMemo } from 'react';
+// eslint-disable-next-line no-restricted-syntax
+import { useMemo } from 'react';
 import { AppTheme } from '@backstage/core-plugin-api';
 import { themes } from '@backstage/theme';
 

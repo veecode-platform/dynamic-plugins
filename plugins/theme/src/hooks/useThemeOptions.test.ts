@@ -42,7 +42,7 @@ describe('useThemeOptions', () => {
     const { result } = renderHook(() =>
       useThemeOptions({
         mode: 'dark',
-        variant: 'rhdh',
+        variant: 'veecode',
       }),
     );
     expect(result.current).toEqual({

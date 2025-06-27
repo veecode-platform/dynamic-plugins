@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /*
  * Copyright Red Hat, Inc.
  *
@@ -14,7 +15,6 @@
  * limitations under the License.
  */
 
-import React from 'react';
 import type { ReactNode } from 'react';
 import { AppTheme } from '@backstage/core-plugin-api';
 import { UnifiedTheme, UnifiedThemeProvider } from '@backstage/theme';

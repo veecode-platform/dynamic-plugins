@@ -27,7 +27,8 @@ export const useBranding = (): Branding | undefined => {
     // useApi won't be initialized initially in createApp theme provider, and will get updated later
   }
   return useMemo(() => {
-    const branding = configApi?.getOptional<Branding>('app.branding');
-    return branding;
+    // const branding = configApi?.getOptional<Branding>('app.branding');
+    const branding = configApi?.app?.branding;
+    return branding as Branding;
   }, [configApi]);
 };
