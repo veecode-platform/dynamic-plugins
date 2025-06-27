@@ -1,6 +1,6 @@
 {
   "name": "@veecode-platform/plugin-veecode-global-header",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "license": "Apache-2.0",
   "private": true,
   "main": "src/index.ts",
@@ -12,7 +12,10 @@
   },
   "backstage": {
     "role": "frontend-plugin",
-    "pluginId": "veecode-global-header"
+    "pluginId": "veecode-global-header",
+    "pluginPackages": [
+      "@backstage/plugin-home"
+    ]
   },
   "sideEffects": false,
   "scripts": {
