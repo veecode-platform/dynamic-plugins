@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout
+      - name: 📥 Checkout code
         uses: actions/checkout@v3
 
-      - name: 🟢 Setup Node
+      - name: 🟢 Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
@@ -26,20 +26,22 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 📦 Instalar dependências
+      - name: 📦 Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: 🧪 Detectar plugins modificados
+      - name: 🧪 Detect modified plugins using Lerna
         run: |
           yarn lerna changed --json > changed.json || echo '[]' > changed.json
         continue-on-error: true
 
-      - name: 🛠️ Buildar e publicar plugins
-        run: yarn build-and-publish-plugins
+      - name: 🛠️ Build and publish plugins
+        run: |
+          chmod +x scripts/build-and-publish.sh
+          yarn build-and-publish-plugins
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: 📤 Upload do plugins-output.yaml
+      - name: 📤 Upload plugins-output.yaml
         uses: actions/upload-artifact@v4
         with:
           name: plugins-output
