@@ -1,39 +1,45 @@
+# Move to the .github/workflows folder
+
 name: Build & Publish Dynamic Backstage Plugins
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 jobs:
-  build-publish-plugins:
+  build-publish:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout code
+      - name: 📥 Checkout
         uses: actions/checkout@v3
 
-      - name: 🟢 Setup Node.js
+      - name: 🟢 Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 📦 Install deps
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Instalar dependências
         run: yarn install --frozen-lockfile
 
-      - name: 🧪 Check plugins version with Lerna
+      - name: 🧪 Detectar plugins modificados
         run: |
           yarn lerna changed --json > changed.json || echo '[]' > changed.json
         continue-on-error: true
 
-      - name: 🛠️ Build and publish dynamic plugins
-        run: npx ts-node scripts/build-and-publish.ts
+      - name: 🛠️ Buildar e publicar plugins
+        run: yarn build-and-publish-plugins
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: 📤 Upload to plugins-output.yaml
+      - name: 📤 Upload do plugins-output.yaml
         uses: actions/upload-artifact@v4
         with:
           name: plugins-output

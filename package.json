@@ -6,6 +6,7 @@
     "node": "20 || 22"
   },
   "scripts": {
+    "build-and-publish-plugins": "./scripts/build-and-publish.sh",
     "start-dynamic": "./scripts/check_dynamic_plugins.sh && yarn start",
     "start": "NODE_OPTIONS='--no-node-snapshot --max-old-space-size=4096' backstage-cli repo start",
     "build:backend": "yarn workspace backend build",
