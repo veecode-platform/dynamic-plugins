@@ -23,32 +23,46 @@ def get_package_info(plugin_path):
         pkg = json.load(f)
     return pkg["name"], pkg["version"]
 
-def build_dynamic(plugin_path, name):
-    print(f"🛠️  Buildando {name}...")
-    result = subprocess.run(["yarn", "build-dynamic-plugin"], cwd=plugin_path)
+def run_command(command, cwd):
+    print(f"Running command: {' '.join(command)} in {cwd}")
+    result = subprocess.run(command, cwd=cwd)
     if result.returncode != 0:
-        raise Exception(f"❌ Falha ao buildar {name}")
+        raise Exception(f"Command failed: {' '.join(command)}")
+
+def build_dynamic(plugin_path, name):
+    print(f"🔨 Building {name}...")
+
+    tsconfig_path = plugin_path / "tsconfig.json"
+    if tsconfig_path.exists():
+        print(f"Found tsconfig.json for {name}, running 'yarn tsc' first...")
+        run_command(["yarn", "tsc"], cwd=plugin_path)
+
+    run_command(["yarn", "build-dynamic-plugin"], cwd=plugin_path)
 
 def publish_plugin(plugin_path, name):
-    print(f"📦 Publicando {name}...")
+    print(f"📦 Publishing {name}...")
     dist_path = plugin_path / "dist-dynamic"
-    result = subprocess.run(
+    run_command(
         ["npm", "publish", "--access", "public"],
-        cwd=dist_path,
-        env={**os.environ, "NODE_AUTH_TOKEN": os.environ.get("NODE_AUTH_TOKEN", "")}
+        cwd=dist_path
     )
-    if result.returncode != 0:
-        raise Exception(f"❌ Falha ao publicar {name}")
 
 def get_integrity(plugin_path, name):
-    result = subprocess.run(["npm", "pack", "--json"], cwd=plugin_path, capture_output=True, text=True)
+    print(f"📦 Packing {name} to get integrity hash...")
+    result = subprocess.run(
+        ["npm", "pack", "--json"],
+        cwd=plugin_path,
+        capture_output=True,
+        text=True
+    )
     if result.returncode != 0:
-        raise Exception(f"❌ Erro ao gerar pacote para {name}")
+        raise Exception(f"❌ Error generating package for {name}")
+
     output = json.loads(result.stdout)[0]
     return output["integrity"]
 
 def main():
-    print("🚀 Iniciando processo de build e publicação...")
+    print("🚀 Starting build and publish process...")
 
     if OUTPUT_FILE.exists():
         OUTPUT_FILE.unlink()
@@ -63,10 +77,18 @@ def main():
         changed_flag = name in changed
 
         if changed_flag:
-            build_dynamic(plugin_path, name)
-            publish_plugin(plugin_path, name)
+            try:
+                build_dynamic(plugin_path, name)
+                publish_plugin(plugin_path, name)
+            except Exception as e:
+                print(f"❌ Failed building/publishing {name}: {e}")
+                continue
 
-        integrity = get_integrity(plugin_path, name)
+        try:
+            integrity = get_integrity(plugin_path, name)
+        except Exception as e:
+            print(f"❌ Failed generating integrity for {name}: {e}")
+            integrity = "unknown"
 
         output.append({
             "disabled": not changed_flag,
@@ -77,7 +99,7 @@ def main():
     with open(OUTPUT_FILE, "w") as f:
         yaml.dump({"plugins": output}, f, default_flow_style=False)
 
-    print(f"✅ Processo finalizado! Output em: {OUTPUT_FILE}")
+    print(f"✅ Process finished! Output file at: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
