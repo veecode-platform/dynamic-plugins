@@ -51,6 +51,6 @@
     "directory": "platform-backstage-plugins"
   },
   "dependencies": {
-    "@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer": "^2.1.0"
+    "@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer": "^0.2.0"
   }
 }
