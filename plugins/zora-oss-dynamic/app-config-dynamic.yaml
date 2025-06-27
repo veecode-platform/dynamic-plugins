@@ -9,7 +9,6 @@ dynamicPlugins:
               gridColumn: '1 / -1'
             if:
               allOf:
-                - isZoraAvailable
                 - isZoraProject
         - mountPoint: entity.page.zora/cards
           importName: ZoraOSSProjectTabContent
@@ -18,7 +17,6 @@ dynamicPlugins:
               gridColumn: '1 / -1'
             if:
               allOf:
-                - isZoraAvailable
                 - isZoraCluster
         - mountPoint: entity.page.overview/cards
           importName: ZoraOverviewProjectContent
@@ -30,5 +28,4 @@ dynamicPlugins:
                 xs: 'span 12'
             if:
               allOf:
-                - isZoraAvailable
                 - isZoraProject
