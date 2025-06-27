@@ -37,10 +37,12 @@
     "@backstage/cli": "^0.32.1",
     "@backstage/e2e-test-utils": "^0.1.1",
     "@playwright/test": "^1.32.3",
+    "@types/node": "^24.0.6",
     "lerna": "^8.1.2",
     "node-gyp": "^10.0.0",
     "prettier": "^2.3.2",
-    "typescript": "~5.8.0"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
   "resolutions": {
     "@types/react": "^18",
