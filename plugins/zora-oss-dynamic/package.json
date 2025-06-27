@@ -12,7 +12,7 @@
   },
   "backstage": {
     "role": "frontend-plugin",
-    "supported-versions": "0.0.6",
+    "supported-versions": "0.0.7",
     "pluginId": "zora-oss",
     "pluginPackages": [
       "@veecode-platform/backstage-plugin-zora-oss"
@@ -51,6 +51,6 @@
     "directory": "platform-backstage-plugins"
   },
   "dependencies": {
-    "@veecode-platform/backstage-plugin-zora-oss": "^0.0.6"
+    "@veecode-platform/backstage-plugin-zora-oss": "^0.0.7"
   }
 }
