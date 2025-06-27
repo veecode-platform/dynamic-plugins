@@ -1,0 +1,25 @@
+dynamicPlugins:
+  frontend:
+    veecode-platform.plugin-environment-explorer-dynamic:
+      appIcons:
+        - name: environment
+          importName: EnvironmentIcon
+      dynamicRoutes:
+        - path: /environment-explorer
+          importName: EnvironmentExplorerPage
+          menuItem:
+            icon: environment
+            text: Environment Explorer
+          config:
+            props:
+              width: 1500
+              height: 800
+      mountPoints:
+        - mountPoint: entity.page.overview-environment/cards
+          importName: EnvironmentOverviewTabContent
+          config:
+            layout:
+              gridColumn: '1 / -1'
+            if:
+              allOf:
+                - isEnvironmentKind

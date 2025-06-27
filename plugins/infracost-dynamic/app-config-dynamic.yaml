@@ -1,0 +1,12 @@
+dynamicPlugins:
+  frontend:
+    veecode-platform.backstage-plugin-infracost-dynamic:
+      mountPoints:
+        - mountPoint: entity.page.infracost/cards
+          importName: InfracostTabContent
+          config:
+            layout:
+              gridColumn: '1 / -1'
+            if:
+              allOf:
+                - isInfracostAvailable

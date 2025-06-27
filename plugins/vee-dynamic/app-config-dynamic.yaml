@@ -1,0 +1,25 @@
+dynamicPlugins:
+  frontend:
+    veecode-platform.backstage-plugin-vee-dynamic:
+      appIcons:
+        - name: vee
+          importName: veeIcon
+      dynamicRoutes:
+        - path: /vee
+          importName: VeePage
+          menuItem:
+            icon: vee
+            text: Vee
+          config:
+            props:
+              width: 1500
+              height: 800
+      mountPoints:
+        - mountPoint: entity.page.overview/cards
+          importName: VeeAssistantAIContent
+          config:
+            layout:
+              gridColumnEnd:
+                lg: 'span 4'
+                md: 'span 6'
+                xs: 'span 12'

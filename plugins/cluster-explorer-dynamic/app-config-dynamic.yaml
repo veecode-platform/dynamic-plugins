@@ -1,0 +1,36 @@
+dynamicPlugins:
+  frontend:
+    veecode-platform.backstage-plugin-cluster-explorer-dynamic:
+      appIcons:
+        - name: cluster
+          importName: ClusterIcon
+      dynamicRoutes:
+        - path: /cluster-explorer
+          importName: ClusterExplorerPage
+          menuItem:
+            icon: cluster
+            text: Cluster Explorer
+          config:
+            props:
+              width: 1500
+              height: 800
+      mountPoints:
+        - mountPoint: entity.page.overview-cluster/cards
+          importName: ClusterOverviewTabContent
+          config:
+            layout:
+              gridColumn: '1 / -1'
+            if:
+              allOf:
+                - isClusterKind
+        - mountPoint: entity.page.overview/cards
+          importName: ClusterInstructionsCardOverviewContent
+          config:
+            layout:
+              gridColumnEnd:
+                lg: 'span 4'
+                md: 'span 6'
+                xs: 'span 12'
+            if:
+              allOf:
+                - isClusterInstructionsAvailable

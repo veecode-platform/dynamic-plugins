@@ -1,0 +1,25 @@
+dynamicPlugins:
+  frontend:
+    veecode-platform.plugin-vault-explorer-dynamic:
+      appIcons:
+        - name: vault
+          importName: VaultIcon
+      dynamicRoutes:
+        - path: /vault-explorer
+          importName: VaultExplorerPage
+          menuItem:
+            icon: vaut
+            text: Vault Explorer
+          config:
+            props:
+              width: 1500
+              height: 800
+      mountPoints:
+        - mountPoint: entity.page.overview-vault/cards
+          importName: VaultOverviewTabContent
+          config:
+            layout:
+              gridColumn: '1 / -1'
+            if:
+              allOf:
+                - isVaultKind

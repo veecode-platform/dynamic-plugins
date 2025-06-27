@@ -1,0 +1,25 @@
+dynamicPlugins:
+  frontend:
+    veecode-platform.plugin-database-explorer-dynamic:
+      appIcons:
+        - name: database
+          importName: DatabaseIcon
+      dynamicRoutes:
+        - path: /database-explorer
+          importName: DatabaseExplorerPage
+          menuItem:
+            icon: database
+            text: Database Explorer
+          config:
+            props:
+              width: 1500
+              height: 800
+      mountPoints:
+        - mountPoint: entity.page.overview-database/cards
+          importName: DatabaseOverviewTabContent
+          config:
+            layout:
+              gridColumn: '1 / -1'
+            if:
+              allOf:
+                - isDatabaseKind

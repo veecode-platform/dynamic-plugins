@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "//"
+    ],
+    "tasks": {
+        "tsc": {
+            "outputs": [
+                "./dist-types/veecode-platform-backstage-plugin-kubernetes-gpt-analyzer-dynamic/**"
+            ]
+        }
+    }
+}

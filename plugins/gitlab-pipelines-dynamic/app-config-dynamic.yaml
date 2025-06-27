@@ -1,0 +1,23 @@
+dynamicPlugins:
+  frontend:
+    veecode-platform.backstage-plugin-gitlab-pipelines-dynamic:
+      mountPoints:
+        - mountPoint: entity.page.overview/cards
+          importName: GitlabPipelinesOverviewContent
+          config:
+            layout:
+              gridColumnEnd:
+                lg: 'span 4'
+                md: 'span 6'
+                xs: 'span 12'
+            if:
+              allOf:
+                - isGitlabJobsAvailable
+        - mountPoint: entity.page.ci/cards
+          importName: GitlabPipelinesTabContent
+          config:
+            layout:
+              gridColumn: '1 / -1'
+            if:
+              allOf:
+                - isGitlabAvailable
