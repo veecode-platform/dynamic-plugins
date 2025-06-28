@@ -19093,17 +19093,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@veecode-platform/backstage-plugin-cluster-explorer-dynamic@workspace:plugins/cluster-explorer-dynamic":
-  version: 0.0.0-use.local
-  resolution: "@veecode-platform/backstage-plugin-cluster-explorer-dynamic@workspace:plugins/cluster-explorer-dynamic"
-  dependencies:
-    "@backstage/cli": "npm:0.30.0"
-    "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/backstage-plugin-cluster-explorer": "npm:^0.4.0"
-    typescript: "npm:5.8.3"
-  languageName: unknown
-  linkType: soft
-
 "@veecode-platform/backstage-plugin-cluster-explorer@npm:^0.4.0":
   version: 0.4.0
   resolution: "@veecode-platform/backstage-plugin-cluster-explorer@npm:0.4.0"
@@ -19132,13 +19121,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@veecode-platform/backstage-plugin-github-workflows-dynamic@workspace:plugins/github-workflows-dynamic":
+"@veecode-platform/backstage-plugin-cluster-explorer@workspace:plugins/cluster-explorer-dynamic":
   version: 0.0.0-use.local
-  resolution: "@veecode-platform/backstage-plugin-github-workflows-dynamic@workspace:plugins/github-workflows-dynamic"
+  resolution: "@veecode-platform/backstage-plugin-cluster-explorer@workspace:plugins/cluster-explorer-dynamic"
   dependencies:
     "@backstage/cli": "npm:0.30.0"
     "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/backstage-plugin-github-workflows": "npm:^1.2.3"
+    "@veecode-platform/backstage-plugin-cluster-explorer": "npm:^0.4.0"
     typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
@@ -19172,13 +19161,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@veecode-platform/backstage-plugin-gitlab-pipelines-dynamic@workspace:plugins/gitlab-pipelines-dynamic":
+"@veecode-platform/backstage-plugin-github-workflows@workspace:plugins/github-workflows-dynamic":
   version: 0.0.0-use.local
-  resolution: "@veecode-platform/backstage-plugin-gitlab-pipelines-dynamic@workspace:plugins/gitlab-pipelines-dynamic"
+  resolution: "@veecode-platform/backstage-plugin-github-workflows@workspace:plugins/github-workflows-dynamic"
   dependencies:
     "@backstage/cli": "npm:0.30.0"
     "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/backstage-plugin-gitlab-pipelines": "npm:^0.7.0"
+    "@veecode-platform/backstage-plugin-github-workflows": "npm:^1.2.3"
     typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
@@ -19209,6 +19198,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@veecode-platform/backstage-plugin-gitlab-pipelines@workspace:plugins/gitlab-pipelines-dynamic":
+  version: 0.0.0-use.local
+  resolution: "@veecode-platform/backstage-plugin-gitlab-pipelines@workspace:plugins/gitlab-pipelines-dynamic"
+  dependencies:
+    "@backstage/cli": "npm:0.30.0"
+    "@janus-idp/cli": "npm:3.6.1"
+    "@veecode-platform/backstage-plugin-gitlab-pipelines": "npm:^0.7.0"
+    typescript: "npm:5.8.3"
+  languageName: unknown
+  linkType: soft
+
 "@veecode-platform/backstage-plugin-infracost-common@npm:^0.1.8":
   version: 0.1.8
   resolution: "@veecode-platform/backstage-plugin-infracost-common@npm:0.1.8"
@@ -19218,17 +19218,6 @@ __metadata:
   checksum: 10c0/b7dbdcc421f9fa278a0b1399fadb4f6a574c8e3b4fe2ab576ca4d705f84e5173c51445024239dd1644f0315c0eda72510a974377dbce33993b2de6855e6eef7c
   languageName: node
   linkType: hard
-
-"@veecode-platform/backstage-plugin-infracost-dynamic@workspace:plugins/infracost-dynamic":
-  version: 0.0.0-use.local
-  resolution: "@veecode-platform/backstage-plugin-infracost-dynamic@workspace:plugins/infracost-dynamic"
-  dependencies:
-    "@backstage/cli": "npm:0.30.0"
-    "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/backstage-plugin-infracost": "npm:^0.4.0"
-    typescript: "npm:5.8.3"
-  languageName: unknown
-  linkType: soft
 
 "@veecode-platform/backstage-plugin-infracost@npm:^0.4.0":
   version: 0.4.0
@@ -19261,6 +19250,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@veecode-platform/backstage-plugin-infracost@workspace:plugins/infracost-dynamic":
+  version: 0.0.0-use.local
+  resolution: "@veecode-platform/backstage-plugin-infracost@workspace:plugins/infracost-dynamic"
+  dependencies:
+    "@backstage/cli": "npm:0.30.0"
+    "@janus-idp/cli": "npm:3.6.1"
+    "@veecode-platform/backstage-plugin-infracost": "npm:^0.4.0"
+    typescript: "npm:5.8.3"
+  languageName: unknown
+  linkType: soft
+
 "@veecode-platform/backstage-plugin-kong-service-manager-common@npm:^0.5.2":
   version: 0.5.2
   resolution: "@veecode-platform/backstage-plugin-kong-service-manager-common@npm:0.5.2"
@@ -19269,17 +19269,6 @@ __metadata:
   checksum: 10c0/a855da51aec3f930fc79f5f1283ee53a4a5fb4650bd0f468bb0321a8f4a1d7f337095a66f3145618d7ad8b267d65c6d0a2ed26144adaf2f93bfbec402caab1ae
   languageName: node
   linkType: hard
-
-"@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer-dynamic@workspace:plugins/kubernetes-gpt-analyzer-dynamic":
-  version: 0.0.0-use.local
-  resolution: "@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer-dynamic@workspace:plugins/kubernetes-gpt-analyzer-dynamic"
-  dependencies:
-    "@backstage/cli": "npm:0.30.0"
-    "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer": "npm:^0.2.0"
-    typescript: "npm:5.8.3"
-  languageName: unknown
-  linkType: soft
 
 "@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer@npm:^0.2.0":
   version: 0.2.0
@@ -19310,6 +19299,17 @@ __metadata:
   checksum: 10c0/8b3c8babf6cd929ac8143428dbaea360dfdfaf7e2cecbe14c1b37bb306f0aa4e177deb384826d80d7c382eae429529cf5d60f7fcb7a523b5961aebc485573649
   languageName: node
   linkType: hard
+
+"@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer@workspace:plugins/kubernetes-gpt-analyzer-dynamic":
+  version: 0.0.0-use.local
+  resolution: "@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer@workspace:plugins/kubernetes-gpt-analyzer-dynamic"
+  dependencies:
+    "@backstage/cli": "npm:0.30.0"
+    "@janus-idp/cli": "npm:3.6.1"
+    "@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer": "npm:^0.2.0"
+    typescript: "npm:5.8.3"
+  languageName: unknown
+  linkType: soft
 
 "@veecode-platform/backstage-plugin-theme@workspace:plugins/theme":
   version: 0.0.0-use.local
@@ -19351,17 +19351,6 @@ __metadata:
   checksum: 10c0/f008dfd515323aeb84d7f2b43fb126c403a5651ef44be862cd99828af3f8f7293cd4c517b387ef0c45d0965750b1d551ce34532660450ab940b1384439e9d0f6
   languageName: node
   linkType: hard
-
-"@veecode-platform/backstage-plugin-vee-dynamic@workspace:plugins/vee-dynamic":
-  version: 0.0.0-use.local
-  resolution: "@veecode-platform/backstage-plugin-vee-dynamic@workspace:plugins/vee-dynamic"
-  dependencies:
-    "@backstage/cli": "npm:0.30.0"
-    "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/backstage-plugin-vee": "npm:^0.4.0"
-    typescript: "npm:5.8.3"
-  languageName: unknown
-  linkType: soft
 
 "@veecode-platform/backstage-plugin-vee@npm:^0.4.0":
   version: 0.4.0
@@ -19420,13 +19409,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@veecode-platform/backstage-plugin-zora-oss-dynamic@workspace:plugins/zora-oss-dynamic":
+"@veecode-platform/backstage-plugin-vee@workspace:plugins/vee-dynamic":
   version: 0.0.0-use.local
-  resolution: "@veecode-platform/backstage-plugin-zora-oss-dynamic@workspace:plugins/zora-oss-dynamic"
+  resolution: "@veecode-platform/backstage-plugin-vee@workspace:plugins/vee-dynamic"
   dependencies:
     "@backstage/cli": "npm:0.30.0"
     "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/backstage-plugin-zora-oss": "npm:^0.0.7"
+    "@veecode-platform/backstage-plugin-vee": "npm:^0.4.0"
     typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
@@ -19461,13 +19450,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@veecode-platform/plugin-database-explorer-dynamic@workspace:plugins/database-explorer-dynamic":
+"@veecode-platform/backstage-plugin-zora-oss@workspace:plugins/zora-oss-dynamic":
   version: 0.0.0-use.local
-  resolution: "@veecode-platform/plugin-database-explorer-dynamic@workspace:plugins/database-explorer-dynamic"
+  resolution: "@veecode-platform/backstage-plugin-zora-oss@workspace:plugins/zora-oss-dynamic"
   dependencies:
     "@backstage/cli": "npm:0.30.0"
     "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/plugin-database-explorer": "npm:^0.4.0"
+    "@veecode-platform/backstage-plugin-zora-oss": "npm:^0.0.7"
     typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
@@ -19497,6 +19486,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@veecode-platform/plugin-database-explorer@workspace:plugins/database-explorer-dynamic":
+  version: 0.0.0-use.local
+  resolution: "@veecode-platform/plugin-database-explorer@workspace:plugins/database-explorer-dynamic"
+  dependencies:
+    "@backstage/cli": "npm:0.30.0"
+    "@janus-idp/cli": "npm:3.6.1"
+    "@veecode-platform/plugin-database-explorer": "npm:^0.4.0"
+    typescript: "npm:5.8.3"
+  languageName: unknown
+  linkType: soft
+
 "@veecode-platform/plugin-environment-explorer@npm:^0.4.0":
   version: 0.4.0
   resolution: "@veecode-platform/plugin-environment-explorer@npm:0.4.0"
@@ -19522,24 +19522,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@veecode-platform/plugin-environment-explorer@workspace:plugins/environment-explorer-dynamic":
+"@veecode-platform/plugin-environment@workspace:plugins/environment-explorer-dynamic":
   version: 0.0.0-use.local
-  resolution: "@veecode-platform/plugin-environment-explorer@workspace:plugins/environment-explorer-dynamic"
+  resolution: "@veecode-platform/plugin-environment@workspace:plugins/environment-explorer-dynamic"
   dependencies:
     "@backstage/cli": "npm:0.30.0"
     "@janus-idp/cli": "npm:3.6.1"
     "@veecode-platform/plugin-environment-explorer": "npm:^0.4.0"
-    typescript: "npm:5.8.3"
-  languageName: unknown
-  linkType: soft
-
-"@veecode-platform/plugin-kong-service-manager-dynamic@workspace:plugins/kong-service-manager-dynamic":
-  version: 0.0.0-use.local
-  resolution: "@veecode-platform/plugin-kong-service-manager-dynamic@workspace:plugins/kong-service-manager-dynamic"
-  dependencies:
-    "@backstage/cli": "npm:0.30.0"
-    "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/plugin-kong-service-manager": "npm:^2.1.0"
     typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft
@@ -19579,6 +19568,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@veecode-platform/plugin-kong-service-manager@workspace:plugins/kong-service-manager-dynamic":
+  version: 0.0.0-use.local
+  resolution: "@veecode-platform/plugin-kong-service-manager@workspace:plugins/kong-service-manager-dynamic"
+  dependencies:
+    "@backstage/cli": "npm:0.30.0"
+    "@janus-idp/cli": "npm:3.6.1"
+    "@veecode-platform/plugin-kong-service-manager": "npm:^2.1.0"
+    typescript: "npm:5.8.3"
+  languageName: unknown
+  linkType: soft
+
 "@veecode-platform/plugin-kubernetes-react@npm:0.4.2-next.1":
   version: 0.4.2-next.1
   resolution: "@veecode-platform/plugin-kubernetes-react@npm:0.4.2-next.1"
@@ -19611,17 +19611,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@veecode-platform/plugin-vault-explorer-dynamic@workspace:plugins/vault-explorer-dynamic":
-  version: 0.0.0-use.local
-  resolution: "@veecode-platform/plugin-vault-explorer-dynamic@workspace:plugins/vault-explorer-dynamic"
-  dependencies:
-    "@backstage/cli": "npm:0.30.0"
-    "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/plugin-vault-explorer": "npm:^0.4.0"
-    typescript: "npm:5.8.3"
-  languageName: unknown
-  linkType: soft
-
 "@veecode-platform/plugin-vault-explorer@npm:^0.4.0":
   version: 0.4.0
   resolution: "@veecode-platform/plugin-vault-explorer@npm:0.4.0"
@@ -19643,6 +19632,17 @@ __metadata:
   checksum: 10c0/671fbfc0d12aeb28b6a5acf76a7d7ca381d9736665b4027f629a386e9fffe817b74116c053eca3ae186538b4737c99442576af0eccb23b014a32ccbe0b1494cf
   languageName: node
   linkType: hard
+
+"@veecode-platform/plugin-vault-explorer@workspace:plugins/vault-explorer-dynamic":
+  version: 0.0.0-use.local
+  resolution: "@veecode-platform/plugin-vault-explorer@workspace:plugins/vault-explorer-dynamic"
+  dependencies:
+    "@backstage/cli": "npm:0.30.0"
+    "@janus-idp/cli": "npm:3.6.1"
+    "@veecode-platform/plugin-vault-explorer": "npm:^0.4.0"
+    typescript: "npm:5.8.3"
+  languageName: unknown
+  linkType: soft
 
 "@veecode-platform/plugin-veecode-global-header@workspace:^, @veecode-platform/plugin-veecode-global-header@workspace:plugins/veecode-global-header":
   version: 0.0.0-use.local
