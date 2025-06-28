@@ -5,7 +5,7 @@
   "types": "src/index.ts",
   "license": "Apache-2.0",
   "publishConfig": {
-    "access": "restricted",
+    "access": "public",
     "main": "dist/index.cjs.js",
     "types": "dist/index.d.ts"
   },
@@ -50,6 +50,7 @@
     "directory": "platform-backstage-plugins"
   },
   "dependencies": {
-    "@veecode-platform/backstage-plugin-cluster-explorer": "^0.4.0"
+    "@veecode-platform/backstage-plugin-cluster-explorer": "^0.4.0",
+    "@veecode-platform/plugin-kubernetes": "^0.11.13-next.2"
   }
 }
