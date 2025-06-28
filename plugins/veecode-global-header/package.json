@@ -2,11 +2,10 @@
   "name": "@veecode-platform/plugin-veecode-global-header",
   "version": "2.0.0",
   "license": "Apache-2.0",
-  "private": true,
   "main": "src/index.ts",
   "types": "src/index.ts",
   "publishConfig": {
-    "access": "public",
+    "access": "restricted",
     "main": "dist/index.esm.js",
     "types": "dist/index.d.ts"
   },
