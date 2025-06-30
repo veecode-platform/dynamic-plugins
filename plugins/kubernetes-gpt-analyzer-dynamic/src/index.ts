@@ -1,1 +1,1 @@
-export * from '@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer-dynamic';
+export * from '@veecode-platform/backstage-plugin-kubernetes-gpt-analyzer';
