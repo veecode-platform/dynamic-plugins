@@ -49,7 +49,7 @@ export const HomeGreeting = () => {
       sx={{
         background: `linear-gradient(90deg, ${color1} 0%, ${color2} 100%)`,
         width: '100%',
-        height: '200px',
+        minHeight: '210px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
