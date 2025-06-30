@@ -10,44 +10,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: 🟢 Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 🐍 Setup Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: 🐍 Install Python dependencies
+      - name: Install Python dependencies
         run: pip install pyyaml packaging
 
-      - name: 📦 Install Node.js dependencies
+      - name: Install Node.js dependencies
         run: yarn install --frozen-lockfile
 
-      - name: 🧪 Detect modified plugins using Lerna
+      - name: Detect modified plugins using Lerna
         run: |
           yarn lerna changed --json > changed.json || echo '[]' > changed.json
         continue-on-error: true
 
-      - name: 🛠️ Build and publish plugins
+      - name: Build and publish plugins
         run: |
           chmod +x scripts/build-and-publish.sh
           yarn build-and-publish-plugins
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: 📄 Print plugins-output.yaml content
+      - name: Print plugins-output.yaml content
         run: |
-          echo "🔍 plugins-output.yaml content:"
+          echo "plugins-output.yaml content:"
           cat plugins-output.yaml
 
-      - name: 📤 Upload plugins-output.yaml as artifact
+      - name: Upload plugins-output.yaml as artifact
         uses: actions/upload-artifact@v4
         with:
           name: plugins-output
