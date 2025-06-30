@@ -87,7 +87,7 @@ export const SearchBar = (props: SearchBarProps) => {
             sx={{
               width: '100%',
               background:
-                theme.palette.mode === 'dark' ? '#FFFFFF10' : '#F4F4F5',
+                theme.palette.mode === 'dark' ? '#FFFFFF10' : '#CDCDCD10',
               '& [class*="MuiAutocomplete-clearIndicator"]': {
                 visibility: query?.term ? 'visible' : 'hidden',
               },
@@ -95,7 +95,7 @@ export const SearchBar = (props: SearchBarProps) => {
               borderRadius: '8px',
               '&:hover': {
                 background:
-                  theme.palette.mode === 'dark' ? '#FFFFFF25' : '#CAD5E3',
+                  theme.palette.mode === 'dark' ? '#FFFFFF25' : '#CDCDCD25',
               },
             }}
             filterOptions={x => x}
