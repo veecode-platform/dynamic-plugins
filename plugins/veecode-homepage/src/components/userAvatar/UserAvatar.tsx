@@ -17,6 +17,7 @@
 import { useUserProfile } from '@backstage/plugin-user-settings';
 import Avatar from '@mui/material/Avatar';
 import Skeleton from '@mui/material/Skeleton';
+import AvatarImg from '../../assets/avatar.svg';
 
 interface UserAvatarProps {
   width?: string;
@@ -32,7 +33,7 @@ export const UserAvatar: React.FC<UserAvatarProps> = ({ width, height }) => {
         <Skeleton variant="circular" sx={{ width, height }} />
       ) : (
         <Avatar
-          src={profile.picture}
+          src={profile.picture ?? AvatarImg}
           sx={{ width, height, objectFit: 'cover' }}
           alt="Profile picture"
         />
