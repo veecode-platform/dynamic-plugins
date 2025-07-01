@@ -8,8 +8,10 @@ import { SearchComponent } from './searchComponent/SearchComponent';
 import { MenuItems } from './menuItems/MenuItems';
 import { Notifications } from './notifications/Notifications';
 import { Profile } from './profile/Profle';
+import { useTheme } from '@mui/material/styles';
 
 export const HeaderComponent = () => {
+  const theme = useTheme();
   const [profileAnchorEl, setProfileAnchorEl] =
     React.useState<null | HTMLElement>(null);
 
@@ -25,7 +27,11 @@ export const HeaderComponent = () => {
 
   return (
     <Box sx={{ flexGrow: 1, position: 'relative' }}>
-      <AppBar position="sticky" component="nav">
+      <AppBar
+        position="sticky"
+        component="nav"
+        style={{ zIndex: theme.zIndex.appBar - 1 }}
+      >
         <Toolbar>
           <SearchComponent />
           <Box sx={{ flexGrow: 1 }} />

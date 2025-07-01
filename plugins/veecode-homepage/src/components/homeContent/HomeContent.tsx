@@ -1,7 +1,7 @@
+/* eslint-disable no-restricted-syntax */
 import {
   HomePageStarredEntities,
   HomePageToolkit,
-  HomePageTopVisited,
   HomePageRecentlyVisited,
 } from '@backstage/plugin-home';
 import Grid from '@mui/material/Grid';
@@ -14,6 +14,7 @@ import DocsLogo from '../../assets/Docs';
 import WebsiteLogo from '../../assets/Website';
 import SupportLogo from '../../assets/Support';
 import BackstageLogo from '../../assets/backstage.png';
+import PieAnimation from './VisitedCharts';
 
 export const HomeContent = () => {
   const tools = [
@@ -46,27 +47,24 @@ export const HomeContent = () => {
           {/* Top & Recently Visited */}
           <Grid item xs={12}>
             <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
-                <HomePageTopVisited kind="recent" />
+              <Grid item xs={12} md={6} lg={8}>
+                <Grid container spacing={2} justifyContent="center">
+                  <Grid item xs={12} md={12} lg={12}>
+                    <HomePageRecentlyVisited />
+                  </Grid>
+                  <Grid item xs={12} md={12} lg={12}>
+                    <HomePageStarredEntities />
+                  </Grid>
+                  <Grid item xl={12}>
+                    <HomePageToolkit tools={tools} />
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid item xs={12} md={6}>
-                <HomePageRecentlyVisited />
-              </Grid>
-            </Grid>
-          </Grid>
-
-          {/* Starred & Toolkit */}
-          <Grid item xs={12}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={12} lg={8} xl={8}>
-                <HomePageStarredEntities />
-              </Grid>
-              <Grid item xs={12} md={12} lg={4} xl={4}>
-                <HomePageToolkit tools={tools} />
+              <Grid item xs={12} md={6} lg={4}>
+                <PieAnimation />
               </Grid>
             </Grid>
           </Grid>
-
           {/* Footer */}
           <Grid item xs={12} sx={{ marginTop: '7rem' }}>
             <Box
