@@ -55,7 +55,7 @@ export const HomeContent = () => {
                   <Grid item xs={12} md={12} lg={12}>
                     <HomePageStarredEntities />
                   </Grid>
-                  <Grid item xl={12}>
+                  <Grid item xs={12} md={12} lg={12}>
                     <HomePageToolkit tools={tools} />
                   </Grid>
                 </Grid>
