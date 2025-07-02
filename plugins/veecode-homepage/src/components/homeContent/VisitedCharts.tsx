@@ -99,7 +99,14 @@ export default function VisitedCharts() {
   return (
     <Card
       variant="outlined"
-      sx={{ display: 'flex', flexDirection: 'column', gap: '8px', flexGrow: 1 }}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8px',
+        flexGrow: 1,
+        maxHeight: '900px',
+        overfloyY: 'auto',
+      }}
     >
       <CardHeader title="Top Visited" />
       <Divider />

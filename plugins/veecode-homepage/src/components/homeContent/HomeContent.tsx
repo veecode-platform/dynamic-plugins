@@ -15,6 +15,7 @@ import WebsiteLogo from '../../assets/Website';
 import SupportLogo from '../../assets/Support';
 import BackstageLogo from '../../assets/backstage.png';
 import PieAnimation from './VisitedCharts';
+import Summary from './Summary';
 
 export const HomeContent = () => {
   const tools = [
@@ -50,18 +51,25 @@ export const HomeContent = () => {
               <Grid item xs={12} md={6} lg={8}>
                 <Grid container spacing={2} justifyContent="center">
                   <Grid item xs={12} md={12} lg={12}>
+                    <Summary />
+                  </Grid>
+                  <Grid item xs={12} md={12} lg={12}>
                     <HomePageRecentlyVisited />
                   </Grid>
                   <Grid item xs={12} md={12} lg={12}>
                     <HomePageStarredEntities />
                   </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12} md={6} lg={4}>
+                <Grid container spacing={2} justifyContent="center">
+                  <Grid item xs={12} md={12} lg={12}>
+                    <PieAnimation />
+                  </Grid>
                   <Grid item xs={12} md={12} lg={12}>
                     <HomePageToolkit tools={tools} />
                   </Grid>
                 </Grid>
-              </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <PieAnimation />
               </Grid>
             </Grid>
           </Grid>

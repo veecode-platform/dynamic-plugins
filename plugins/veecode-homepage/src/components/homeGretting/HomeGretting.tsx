@@ -56,7 +56,8 @@ export const HomeGreeting = () => {
         position: 'relative',
         overflow: 'hidden',
         [theme.breakpoints.only('xs')]: {
-          height: 'auto',
+          height: '380px',
+          padding: '1rem 0',
         },
       }}
     >
@@ -76,14 +77,22 @@ export const HomeGreeting = () => {
         <Box>
           <UserAvatar width="120px" height="120px" />
         </Box>
-        <Box color={theme.palette.grey[100]}>
+        <Box
+          sx={{
+            [theme.breakpoints.only('xs')]: {
+              textAlign: 'center',
+              color: theme.palette.grey[100],
+              maxWidth: '70vw',
+            },
+          }}
+        >
           <Typography variant="h3">
             Welcome back
             {loading ? (
               <Skeleton
                 variant="rectangular"
-                width={130}
-                height={60}
+                width={150}
+                height={80}
                 style={{ display: 'inline' }}
               />
             ) : (
