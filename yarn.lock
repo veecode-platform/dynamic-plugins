@@ -19699,9 +19699,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@veecode-platform/plugin-kong-service-manager@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@veecode-platform/plugin-kong-service-manager@npm:2.1.0"
+"@veecode-platform/plugin-kong-service-manager-react@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@veecode-platform/plugin-kong-service-manager-react@npm:0.1.1"
+  dependencies:
+    "@mui/material": "npm:^6.1.2"
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/d941d537450a58069b35151e64bb9a060d0d0c5cbf65e3505ab6ee54ed6f7778039d3c5af757feb911431111b03bd312dbd74bf59fab26007d3ddd7ef9e7e2a4
+  languageName: node
+  linkType: hard
+
+"@veecode-platform/plugin-kong-service-manager@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@veecode-platform/plugin-kong-service-manager@npm:2.1.2"
   dependencies:
     "@backstage/catalog-model": "npm:^1.7.4"
     "@backstage/core-compat-api": "npm:^0.4.2"
@@ -19720,6 +19731,7 @@ __metadata:
     "@mui/material": "npm:^6.1.2"
     "@octokit/rest": "npm:^21.0.2"
     "@veecode-platform/backstage-plugin-kong-service-manager-common": "npm:^0.5.2"
+    "@veecode-platform/plugin-kong-service-manager-react": "npm:^0.1.1"
     dayjs: "npm:^1.11.10"
     js-base64: "npm:^3.7.7"
     js-yaml: "npm:^4.1.0"
@@ -19730,7 +19742,7 @@ __metadata:
   peerDependencies:
     react: ^18.0.2
     react-router-dom: ^6.3.0
-  checksum: 10c0/b24a0056d6c33e2346362750d1cf058968372623df07e02156b2040a6223f2ee07ea4ef9ac089ac35a9adbffce153f4e2482fee70ccede701991336dceb94db8
+  checksum: 10c0/ea7ce8c65dddd60a212e7ef67bfc5cb443b4d40849cd6c930b387ce1f41fa4bdb81a0d172c2eba0dbcf96dd70edf4d4ccb19fe6f488f772dc8e80185edb58fd4
   languageName: node
   linkType: hard
 
@@ -19740,7 +19752,7 @@ __metadata:
   dependencies:
     "@backstage/cli": "npm:0.30.0"
     "@janus-idp/cli": "npm:3.6.1"
-    "@veecode-platform/plugin-kong-service-manager": "npm:^2.1.0"
+    "@veecode-platform/plugin-kong-service-manager": "npm:^2.1.2"
     typescript: "npm:5.8.3"
   languageName: unknown
   linkType: soft

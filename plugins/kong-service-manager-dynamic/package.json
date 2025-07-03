@@ -11,7 +11,7 @@
   },
   "backstage": {
     "role": "frontend-plugin",
-    "supported-versions": "2.1.0",
+    "supported-versions": "2.1.2",
     "pluginId": "kong-service-manager",
     "pluginPackages": [
       "@veecode-platform/plugin-kong-service-manager"
@@ -50,6 +50,6 @@
     "directory": "platform-backstage-plugins"
   },
   "dependencies": {
-    "@veecode-platform/plugin-kong-service-manager": "^2.1.0"
+    "@veecode-platform/plugin-kong-service-manager": "^2.1.2"
   }
 }
