@@ -1,6 +1,6 @@
 import {
   createPlugin,
-  createRoutableExtension,
+  createComponentExtension,
 } from '@backstage/core-plugin-api';
 
 import { rootRouteRef } from './routes';
@@ -13,12 +13,13 @@ export const veecodeGlobalHeaderPlugin = createPlugin({
 });
 
 export const VeecodeGlobalHeader = veecodeGlobalHeaderPlugin.provide(
-  createRoutableExtension({
+  createComponentExtension({
     name: 'VeecodeGlobalHeader',
-    component: () =>
-      import('./components/VeeCodeGlobalHeader').then(
-        m => m.VeeCodeGlobalHeader,
-      ),
-    mountPoint: rootRouteRef,
+    component: {
+      lazy: () =>
+        import('./components/VeeCodeGlobalHeader').then(
+          m => m.VeeCodeGlobalHeader,
+        ),
+    },
   }),
 );
