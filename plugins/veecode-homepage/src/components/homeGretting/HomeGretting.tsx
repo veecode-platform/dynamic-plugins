@@ -86,7 +86,7 @@ export const HomeGreeting = () => {
             },
           }}
         >
-          <Typography variant="h3">
+          <Typography variant="h3" color="#FAFAFA">
             Welcome back
             {loading ? (
               <Skeleton
@@ -99,7 +99,9 @@ export const HomeGreeting = () => {
               <>, {profileDisplayName()} 👋</>
             )}{' '}
           </Typography>
-          <Typography variant="h6">Let's get started.</Typography>
+          <Typography variant="h6" color="#FAFAFA">
+            Let's get started.
+          </Typography>
         </Box>
       </Box>
       <img
