@@ -9,7 +9,13 @@ import { MenuItems } from './menuItems/MenuItems';
 import { Notifications } from './notifications/Notifications';
 import { Profile } from './profile/Profle';
 
-export const HeaderComponent = () => {
+interface HeaderComponentProps {
+  children: React.ReactNode;
+}
+
+export const HeaderComponent: React.FC<HeaderComponentProps> = ({
+  children,
+}) => {
   const [profileAnchorEl, setProfileAnchorEl] =
     React.useState<null | HTMLElement>(null);
 
@@ -24,7 +30,7 @@ export const HeaderComponent = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <>
       <AppBar position="sticky" component="nav" id="global-header">
         <Toolbar>
           <SearchComponent />
@@ -42,6 +48,7 @@ export const HeaderComponent = () => {
             <Notifications />
             <ToogleTheme />
             <Profile handleOpenMenu={handleProfileMenuOpen} />
+            {children}
           </Box>
         </Toolbar>
       </AppBar>
@@ -53,6 +60,6 @@ export const HeaderComponent = () => {
         isOpen={isProfileMenuOpen}
         handleClose={handleProfileMenuClose}
       />
-    </Box>
+    </>
   );
 };

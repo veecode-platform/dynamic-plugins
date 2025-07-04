@@ -13,12 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material/className';
 
-ClassNameGenerator.configure(componentName => {
-  return componentName.startsWith('v5-')
-    ? componentName
-    : `v5-${componentName}`;
-});
+import { useState } from 'react';
+import type { MouseEvent } from 'react';
 
-export * from './plugin';
+export const useDropdownManager = () => {
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+
+  const handleOpen = (event: MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return {
+    anchorEl,
+    open: !!anchorEl,
+    handleOpen,
+    handleClose,
+  };
+};

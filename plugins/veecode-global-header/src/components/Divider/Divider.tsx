@@ -13,12 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material/className';
 
-ClassNameGenerator.configure(componentName => {
-  return componentName.startsWith('v5-')
-    ? componentName
-    : `v5-${componentName}`;
-});
+import type { CSSProperties } from 'react';
+import MUIDivider from '@mui/material/Divider';
 
-export * from './plugin';
+/**
+ * @public
+ */
+export interface DividerProps {
+  layout?: CSSProperties;
+}
+
+/**
+ * @public
+ */
+export const Divider = ({ layout }: DividerProps) => {
+  return (
+    <MUIDivider
+      orientation="vertical"
+      flexItem
+      sx={{ borderColor: 'inherit', opacity: 0.25, marginX: 1, ...layout }}
+    />
+  );
+};

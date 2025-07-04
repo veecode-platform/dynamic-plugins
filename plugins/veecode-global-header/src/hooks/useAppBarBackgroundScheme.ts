@@ -13,12 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material/className';
+import { useTheme } from '@mui/material/styles';
+import type { ThemeConfig } from '@red-hat-developer-hub/backstage-plugin-theme';
 
-ClassNameGenerator.configure(componentName => {
-  return componentName.startsWith('v5-')
-    ? componentName
-    : `v5-${componentName}`;
-});
+/**
+ * Get the app bar background scheme from the theme. Defaults to light if not set.
+ */
+export const useAppBarBackgroundScheme = () => {
+  const theme = useTheme();
+  const appBarBackgroundScheme = (theme as ThemeConfig)?.palette?.rhdh?.general
+    ?.appBarBackgroundScheme;
 
-export * from './plugin';
+  // default to 'dark' because Backstage's default theme is always dark
+  return appBarBackgroundScheme ?? 'dark';
+};

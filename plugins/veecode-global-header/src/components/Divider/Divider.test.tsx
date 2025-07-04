@@ -13,12 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material/className';
 
-ClassNameGenerator.configure(componentName => {
-  return componentName.startsWith('v5-')
-    ? componentName
-    : `v5-${componentName}`;
+import { render } from '@testing-library/react';
+
+import { Divider } from './Divider';
+
+describe('Divider', () => {
+  it('render some default styles', () => {
+    const { debug, container } = render(<Divider />);
+    debug();
+    expect(container.firstElementChild?.nodeName).toEqual('HR');
+  });
 });
-
-export * from './plugin';

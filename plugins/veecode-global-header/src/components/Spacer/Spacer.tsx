@@ -13,12 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material/className';
 
-ClassNameGenerator.configure(componentName => {
-  return componentName.startsWith('v5-')
-    ? componentName
-    : `v5-${componentName}`;
-});
+import type { CSSProperties } from 'react';
+/**
+ * @public
+ */
+export interface SpacerProps {
+  growFactor?: number;
+  minWidth?: number | string;
+  layout?: CSSProperties;
+}
 
-export * from './plugin';
+/**
+ * @public
+ */
+export const Spacer = ({
+  growFactor = 1,
+  minWidth = 1,
+  layout,
+}: SpacerProps) => {
+  return (
+    <div
+      style={{
+        flexGrow: growFactor,
+        minWidth: typeof minWidth === 'number' ? minWidth * 8 : minWidth,
+        ...layout,
+      }}
+    />
+  );
+};

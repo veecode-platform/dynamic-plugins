@@ -13,12 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material/className';
 
-ClassNameGenerator.configure(componentName => {
-  return componentName.startsWith('v5-')
-    ? componentName
-    : `v5-${componentName}`;
-});
+import { useScalprum } from '@scalprum/react-core';
+import { GlobalHeaderComponentMountPoint, ScalprumState } from '../types';
 
-export * from './plugin';
+export const useGlobalHeaderMountPoints = ():
+  | GlobalHeaderComponentMountPoint[]
+  | undefined => {
+  const scalprum = useScalprum<ScalprumState>();
+
+  const globalHeaderComponentsMountPoints =
+    scalprum?.api?.dynamicRootConfig?.mountPoints?.['global.header/component'];
+
+  return globalHeaderComponentsMountPoints;
+};
