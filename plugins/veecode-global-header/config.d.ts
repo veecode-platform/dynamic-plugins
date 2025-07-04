@@ -30,6 +30,11 @@ declare module '@backstage/config' {
          * @visibility frontend
          */
         fullLogoDarkMode?: string;
+        /**
+         *  Width
+         * @visibility frontend
+         */
+        fullLogoWidth?: string;
       };
       support?: {
         /**

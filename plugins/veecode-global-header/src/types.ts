@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /*
  * Copyright Red Hat, Inc.
  *
@@ -140,7 +141,6 @@ export interface ScalprumState {
         'global.header/component': GlobalHeaderComponentMountPoint[];
         'global.header/create': CreateDropdownMountPoint[];
         'global.header/profile': ProfileDropdownMountPoint[];
-        'global.header/application-launcher': ApplicationLauncherDropdownMountPoint[];
         'global.header/help': HelpDropdownMountPoint[];
       };
     };

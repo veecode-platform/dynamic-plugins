@@ -26,8 +26,6 @@ import { MenuItemLinkProps } from './components/MenuItemLink/MenuItemLink';
 import { SoftwareTemplatesSectionProps } from './components/HeaderDropdownComponent/SoftwareTemplatesSection';
 import { RegisterAComponentSectionProps } from './components/HeaderDropdownComponent/RegisterAComponentSection';
 import { CreateDropdownProps } from './components/HeaderDropdownComponent/CreateDropdown';
-import { ProfileDropdownProps } from './components/HeaderDropdownComponent/ProfileDropdown';
-import { QuickstartButtonProps } from './components/QuickstartButton/QuickstartButton';
 import { SupportButtonProps } from './plugin';
 
 export type { GlobalHeaderComponentProps } from './components/GlobalHeaderComponent';
@@ -36,7 +34,6 @@ export type { HeaderButtonProps } from './components/HeaderButton/HeaderButton';
 export type { HeaderIconProps } from './components/HeaderIcon/HeaderIcon';
 export type { HeaderIconButtonProps } from './components/HeaderIconButton/HeaderIconButton';
 export type { CreateDropdownProps } from './components/HeaderDropdownComponent/CreateDropdown';
-export type { ProfileDropdownProps } from './components/HeaderDropdownComponent/ProfileDropdown';
 
 export type { MenuItemLinkProps } from './components/MenuItemLink/MenuItemLink';
 export type { MenuItemConfig } from './components/HeaderDropdownComponent/MenuSection';
@@ -45,7 +42,6 @@ export type { RegisterAComponentSectionProps } from './components/HeaderDropdown
 export type { DividerProps } from './components/Divider/Divider';
 export type { SpacerProps } from './components/Spacer/Spacer';
 export type { SupportButtonProps } from './components/SupportButton/SupportButton';
-export type { QuickstartButtonProps } from './components/QuickstartButton/QuickstartButton';
 export type { NotificationButtonProps } from './components/NotificationButton/NotificationButton';
 export type {
   LogoURLs,
@@ -184,24 +180,6 @@ export const CreateDropdown: ComponentType<CreateDropdownProps> =
   );
 
 /**
- * Profile Dropdown
- *
- * @public
- */
-export const ProfileDropdown: ComponentType<ProfileDropdownProps> =
-  globalHeaderPlugin.provide(
-    createComponentExtension({
-      name: 'ProfileDropdown',
-      component: {
-        lazy: () =>
-          import('./components/HeaderDropdownComponent/ProfileDropdown').then(
-            m => m.ProfileDropdown,
-          ),
-      },
-    }),
-  );
-
-/**
  * Software Templates List
  *
  * @public
@@ -319,22 +297,6 @@ export const SupportButton: ComponentType<SupportButtonProps> =
 /**
  * @public
  */
-export const QuickstartButton: ComponentType<QuickstartButtonProps> =
-  globalHeaderPlugin.provide(
-    createComponentExtension({
-      name: 'QuickstartButton',
-      component: {
-        lazy: () =>
-          import('./components/QuickstartButton/QuickstartButton').then(
-            m => m.QuickstartButton,
-          ),
-      },
-    }),
-  );
-
-/**
- * @public
- */
 export const NotificationButton = globalHeaderPlugin.provide(
   createComponentExtension({
     name: 'NotificationButton',
@@ -377,23 +339,6 @@ export const StarredDropdown = globalHeaderPlugin.provide(
         import('./components/HeaderDropdownComponent/StarredDropdown').then(
           m => m.StarredDropdown,
         ),
-    },
-  }),
-);
-
-/**
- * Application Launcher Dropdown
- *
- * @public
- */
-export const ApplicationLauncherDropdown = globalHeaderPlugin.provide(
-  createComponentExtension({
-    name: 'ApplicationLauncherDropdown',
-    component: {
-      lazy: () =>
-        import(
-          './components/HeaderDropdownComponent/ApplicationLauncherDropdown'
-        ).then(m => m.ApplicationLauncherDropdown),
     },
   }),
 );

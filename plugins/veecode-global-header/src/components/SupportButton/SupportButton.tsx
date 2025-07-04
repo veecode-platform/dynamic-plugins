@@ -42,7 +42,7 @@ export const SupportButton = ({
 }: SupportButtonProps) => {
   const apiHolder = useApiHolder();
   const config = apiHolder.get(configApiRef);
-  const supportUrl = to ?? config?.getOptionalString('app.support.url');
+  const supportUrl = to ?? config?.app?.support?.url;
 
   if (!supportUrl) {
     return null;

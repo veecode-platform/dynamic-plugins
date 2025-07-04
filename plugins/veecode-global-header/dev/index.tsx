@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /*
  * Copyright Red Hat, Inc.
  *
@@ -47,11 +48,8 @@ import {
 } from '../src/plugin';
 
 import {
-  defaultApplicationLauncherDropdownMountPoints,
   defaultCreateDropdownMountPoints,
   defaultGlobalHeaderComponentsMountPoints,
-  defaultHelpDropdownMountPoints,
-  defaultProfileDropdownMountPoints,
 } from '../src/defaultMountPoints/defaultMountPoints';
 
 import { HeaderButton } from '../src/components/HeaderButton/HeaderButton';
@@ -174,10 +172,6 @@ createDevApp()
         mountPoints={{
           'global.header/component': defaultGlobalHeaderComponentsMountPoints,
           'global.header/create': defaultCreateDropdownMountPoints,
-          'global.header/profile': defaultProfileDropdownMountPoints,
-          'global.header/application-launcher':
-            defaultApplicationLauncherDropdownMountPoints,
-          'global.header/help': defaultHelpDropdownMountPoints,
         }}
       >
         <GlobalHeader />
@@ -201,10 +195,6 @@ createDevApp()
               },
             },
           ],
-          'global.header/create': defaultCreateDropdownMountPoints,
-          'global.header/profile': defaultProfileDropdownMountPoints,
-          'global.header/application-launcher':
-            defaultApplicationLauncherDropdownMountPoints,
         }}
       >
         <GlobalHeader />

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /*
  * Copyright Red Hat, Inc.
  *
@@ -57,7 +58,7 @@ export const SoftwareTemplatesSection = ({
           limit: 7,
         });
         setEntities(response.items);
-      } catch (err) {
+      } catch (err: any) {
         setError(err);
       } finally {
         setLoading(false);

@@ -95,7 +95,8 @@ const useFullLogo = (logo: LogoURLs): string | undefined => {
   const configApi = useApi(configApiRef);
 
   /** The fullLogo config specified by app.branding.fullLogo */
-  const fullLogo = configApi.getOptional<LogoURLs>('app.branding.fullLogo');
+  // const fullLogo = configApi.getOptional<LogoURLs>('app.branding.fullLogo');
+  const fullLogo = configApi.app?.branding?.fullLogo;
 
   /** The URI of the logo specified by app.branding.fullLogo */
   const fullLogoURI =
@@ -118,9 +119,10 @@ export const CompanyLogo = ({
 }: CompanyLogoProps) => {
   const logoURL = useFullLogo(logo);
   const configApi = useApi(configApiRef);
-  const fullLogoWidth = configApi.getOptional<number | string>(
-    'app.branding.fullLogoWidth',
-  );
+  // const fullLogoWidth = configApi.getOptional<number | string>(
+  //  'app.branding.fullLogoWidth',
+  // );
+  const fullLogoWidth = configApi.app?.branding?.fullLogo; // TODO
   return (
     <Box
       data-testid="global-header-company-logo"
