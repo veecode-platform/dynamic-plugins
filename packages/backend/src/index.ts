@@ -107,4 +107,5 @@ backend.add(
   import('@backstage-community/plugin-scaffolder-backend-module-annotator'),
 );
 
+backend.add(import('@internal/plugin-catalog-backend-module-veecode-tenant'));
 backend.start();
