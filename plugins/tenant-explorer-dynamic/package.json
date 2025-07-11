@@ -1,6 +1,6 @@
 {
-  "name": "@veecode-platform/backstage-plugin-cluster-explorer",
-  "version": "0.1.1",
+  "name": "@veecode-platform/backstage-plugin-tenant-explorer",
+  "version": "0.1.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "license": "Apache-2.0",
@@ -11,10 +11,10 @@
   },
   "backstage": {
     "role": "frontend-plugin",
-    "supported-versions": "0.4.0",
+    "supported-versions": "0.1.2",
     "pluginId": "cluster-explorer",
     "pluginPackages": [
-      "@veecode-platform/backstage-plugin-cluster-explorer"
+      "@veecode-platform/backstage-plugin-tenant-explorer"
     ]
   },
   "sideEffects": false,
@@ -39,7 +39,7 @@
     "app-config.dynamic.yaml"
   ],
   "scalprum": {
-    "name": "veecode-platform.backstage-plugin-cluster-explorer-dynamic",
+    "name": "veecode-platform.backstage-plugin-tenant-explorer-dynamic",
     "exposedModules": {
       "PluginRoot": "./src/index.ts"
     }
@@ -50,7 +50,7 @@
     "directory": "platform-backstage-plugins"
   },
   "dependencies": {
-    "@veecode-platform/backstage-plugin-cluster-explorer": "^0.4.0",
+    "@veecode-platform/backstage-plugin-tenant-explorer": "^0.1.2",
     "@veecode-platform/plugin-kubernetes": "^0.11.13-next.2"
   }
 }

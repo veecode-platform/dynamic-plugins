@@ -5,7 +5,7 @@
     "tasks": {
         "tsc": {
             "outputs": [
-                "./dist-types/veecode-platform-backstage-plugin-cluster-explorer-dynamic/**"
+                "./dist-types/veecode-platform-backstage-plugin-tenant-explorer-dynamic/**"
             ]
         }
     }

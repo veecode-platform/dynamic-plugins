@@ -1,0 +1,16 @@
+dynamicPlugins:
+  frontend:
+    veecode-platform.backstage-plugin-tenant-explorer-dynamic:
+      appIcons:
+        - name: tenantIcon
+          importName: TenantNavItem
+      dynamicRoutes:
+        - path: /tenant-explorer
+          importName: TenantExplorerPage
+          menuItem:
+            icon: tenantIcon
+            text: Tenants
+      menuItems:
+        rbac:
+          parent: admin
+          icon: tenantIcon
